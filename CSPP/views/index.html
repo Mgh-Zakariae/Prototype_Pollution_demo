@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>LunaPet - Virtual Pet Care</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="toast" class="toast hidden">
+            <span id="toast-text"></span>
+        </div>
+
+        <div class="app-wrapper">
+            <header>
+                <h1>LunaPet</h1>
+                <p class="subtitle">Virtual Pet Care Configurator</p>
+            </header>
+
+            <form id="pet-form" onsubmit="return false;">
+                <div class="main-layout">
+
+                    <div class="column settings-col">
+                        <div class="panel">
+                            <h2>Pet Info</h2>
+                            <label>Pet Name</label>
+                            <input type="text" name="pet_name" class="input-full" value="Luna" />
+                            <label>Breed</label>
+                            <select name="pet_breed" class="input-full">
+                                <option value="corgi">Corgi</option>
+                                <option value="shiba">Shiba Inu</option>
+                                <option value="tabby">Tabby Cat</option>
+                                <option value="hamster">Hamster</option>
+                                <option value="rabbit">Rabbit</option>
+                            </select>
+                        </div>
+
+                        <div class="panel">
+                            <h2>Care Settings</h2>
+                            <div class="checkbox-group">
+                                <label class="check-label">
+                                    <input type="checkbox" name="auto_feed" checked />
+                                    Auto-Feed
+                                </label>
+                                <label class="check-label">
+                                    <input type="checkbox" name="sounds" checked />
+                                    Sound Effects
+                                </label>
+                            </div>
+                            <label>Mood</label>
+                            <select name="mood" class="input-full">
+                                <option value="happy">Happy</option>
+                                <option value="sleepy">Sleepy</option>
+                                <option value="playful">Playful</option>
+                                <option value="hungry">Hungry</option>
+                            </select>
+                            <label>Playtime (minutes/day)</label>
+                            <input type="number" name="playtime" class="input-full" value="30" min="5" max="180" />
+                            <label>Walk Duration (minutes)</label>
+                            <input type="number" name="walk_minutes" class="input-full" value="45" min="0" max="120" />
+                        </div>
+
+                        <div class="panel">
+                            <h2>Appearance</h2>
+                            <label>Theme</label>
+                            <select name="theme" class="input-full">
+                                <option value="ocean">Ocean Blue</option>
+                                <option value="sunset">Sunset Orange</option>
+                                <option value="forest">Forest Green</option>
+                                <option value="night">Night Purple</option>
+                            </select>
+                            <label>Skin</label>
+                            <select name="skin" class="input-full">
+                                <option value="default">Default</option>
+                                <option value="spotted">Spotted</option>
+                                <option value="striped">Striped</option>
+                                <option value="sparkle">Sparkle</option>
+                            </select>
+                        </div>
+
+                        <div class="panel">
+                            <h2>Diet</h2>
+                            <label>Diet Type</label>
+                            <select name="diet" class="input-full">
+                                <option value="balanced">Balanced</option>
+                                <option value="grain_free">Grain Free</option>
+                                <option value="raw">Raw Food</option>
+                                <option value="vegetarian">Vegetarian</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="column activity-col">
+                        <div class="panel">
+                            <h2>Pet Activity Feed</h2>
+                            <div id="activity-feed" class="activity-feed">
+                                <p class="placeholder-text">Loading activity...</p>
+                            </div>
+                            <div id="happiness-bar" class="happiness-bar hidden">
+                                <span>Happiness:</span>
+                                <div class="bar-bg">
+                                    <div id="bar-fill" class="bar-fill"></div>
+                                </div>
+                                <span id="bar-value">0%</span>
+                            </div>
+                        </div>
+
+                        <div class="panel actions">
+                            <button type="button" id="restoreBtn" class="btn btn-secondary">Restore Settings</button>
+                            <button type="button" id="saveBtn" class="btn btn-primary">Save Settings</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <script type="text/javascript" src="/static/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/static/js/main.js"></script>
+    </body>
+</html>
